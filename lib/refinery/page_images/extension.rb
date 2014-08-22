@@ -13,7 +13,7 @@ module Refinery
         # deletes an already defined images_attributes
         module_eval do
           def images_attributes=(data)
-            data = data.reject {|_, data| data.blank?}
+            data.reject! {|_, d| d['image_page_id']=='-1'}
             ids_to_keep = data.map{|_, d| d['image_page_id']}.compact
 
             image_pages_to_delete = if ids_to_keep.empty?
