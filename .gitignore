@@ -4,3 +4,4 @@ spec/dummy/
 .project
 
 *.log
+.idea/*
